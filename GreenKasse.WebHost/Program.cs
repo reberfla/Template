@@ -1,3 +1,5 @@
+using GreenKasse.WebHost.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
@@ -7,6 +9,8 @@ builder.Services.AddOpenApiDocument(configure =>
     configure.DocumentName = "green-kasse-api-definition";
     configure.Title = "Green Kasse Docs";
 });
+
+builder.Services.AddSingleton<IInfoService, MeinInfoService>();
 
 var app = builder.Build();
 
