@@ -2,7 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddOpenApiDocument();
+builder.Services.AddOpenApiDocument(configure =>
+{
+    configure.DocumentName = "green-kasse-api-definition";
+    configure.Title = "Green Kasse Docs";
+});
 
 var app = builder.Build();
 
