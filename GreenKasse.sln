@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalItems", "GlobalItems", "{BEDA6FFC-36C0-4116-9453-574995276B06}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		global.json = global.json
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenKasse.Domain", "GreenKasse.Domain\GreenKasse.Domain.csproj", "{55084E52-94D1-4FE9-9AF1-CF21F515204A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenKasse.Domain.Test", "GreenKasse.Domain.Test\GreenKasse.Domain.Test.csproj", "{619280B8-046D-4501-96B3-05D9FE6F043F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55084E52-94D1-4FE9-9AF1-CF21F515204A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55084E52-94D1-4FE9-9AF1-CF21F515204A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55084E52-94D1-4FE9-9AF1-CF21F515204A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55084E52-94D1-4FE9-9AF1-CF21F515204A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619280B8-046D-4501-96B3-05D9FE6F043F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619280B8-046D-4501-96B3-05D9FE6F043F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619280B8-046D-4501-96B3-05D9FE6F043F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619280B8-046D-4501-96B3-05D9FE6F043F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
