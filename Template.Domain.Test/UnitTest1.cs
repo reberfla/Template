@@ -1,4 +1,4 @@
-﻿namespace Tempalte.Domain.Test;
+﻿namespace Template.Domain.Test;
 
 public class UnitTest1
 {

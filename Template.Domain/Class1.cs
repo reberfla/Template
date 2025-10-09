@@ -19,7 +19,7 @@ public class MyPrice
         }
     }
 
-    public void MyVoidFunction(string myString)
+    public static void MyVoidFunction(string myString)
     {
         // ...
         Console.WriteLine(myString);

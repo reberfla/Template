@@ -1,18 +1,14 @@
-using Template.WebHost.Services;
-
 using Microsoft.AspNetCore.Mvc;
+
+using Template.WebHost.Services;
 
 namespace Template.WebHost.Controllers;
 
 [Route("/api/[controller]")]
-public class MyController: ControllerBase
+public class MyController(IInfoService infoService) : ControllerBase
 {
-    private readonly IInfoService _infoService;
-    public MyController(IInfoService infoService)
-    {
-        _infoService = infoService;
-    }
-    
+    private readonly IInfoService _infoService = infoService;
+
     [HttpGet("my-get")]
     public string MyGet()
     {

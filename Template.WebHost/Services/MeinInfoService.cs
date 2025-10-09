@@ -1,6 +1,6 @@
 namespace Template.WebHost.Services;
 
-public class MeinInfoService: IInfoService
+public class MeinInfoService : IInfoService
 {
     public DateTime GibMirInfo()
     {
