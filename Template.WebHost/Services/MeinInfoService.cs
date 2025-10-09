@@ -1,4 +1,4 @@
-namespace GreenKasse.WebHost.Services;
+namespace Template.WebHost.Services;
 
 public class MeinInfoService: IInfoService
 {

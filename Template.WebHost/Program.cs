@@ -1,4 +1,4 @@
-using GreenKasse.WebHost.Services;
+using Template.WebHost.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

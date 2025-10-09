@@ -1,8 +1,8 @@
-using GreenKasse.WebHost.Services;
+using Template.WebHost.Services;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace GreenKasse.WebHost.Controllers;
+namespace Template.WebHost.Controllers;
 
 [Route("/api/[controller]")]
 public class MyController: ControllerBase

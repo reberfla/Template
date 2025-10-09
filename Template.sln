@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalItems", "GlobalItems"
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenKasse.Domain", "GreenKasse.Domain\GreenKasse.Domain.csproj", "{55084E52-94D1-4FE9-9AF1-CF21F515204A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Domain", "Template.Domain\Template.Domain.csproj", "{55084E52-94D1-4FE9-9AF1-CF21F515204A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenKasse.Domain.Test", "GreenKasse.Domain.Test\GreenKasse.Domain.Test.csproj", "{619280B8-046D-4501-96B3-05D9FE6F043F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Domain.Test", "Template.Domain.Test\Template.Domain.Test.csproj", "{619280B8-046D-4501-96B3-05D9FE6F043F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenKasse.WebHost", "GreenKasse.WebHost\GreenKasse.WebHost.csproj", "{0B69ED2A-0692-4EC1-B10B-7142D6E850CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.WebHost", "Template.WebHost\Template.WebHost.csproj", "{0B69ED2A-0692-4EC1-B10B-7142D6E850CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

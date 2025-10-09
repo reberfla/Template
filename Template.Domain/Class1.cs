@@ -1,4 +1,4 @@
-﻿namespace GreenKasse.Domain;
+﻿namespace Template.Domain;
 
 public class MyPrice
 {

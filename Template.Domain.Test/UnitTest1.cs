@@ -1,4 +1,4 @@
-﻿namespace GreenKasse.Domain.Test;
+﻿namespace Tempalte.Domain.Test;
 
 public class UnitTest1
 {
