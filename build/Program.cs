@@ -39,18 +39,33 @@ public sealed class FormatTask : FrostingTask<BuildContext>
         context.DotNetFormat("../Template.sln", new DotNetFormatSettings
         {
             Severity = DotNetFormatSeverity.Info,
-            Verbosity = DotNetVerbosity.Detailed
+            Verbosity = DotNetVerbosity.Minimal
         });
     }
 }
 
+[TaskName("FormatCheck")]
+public sealed class FormatCheck : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        context.DotNetFormat("../Template.sln", new DotNetFormatSettings
+                {
+                Severity = DotNetFormatSeverity.Info,
+                Verbosity = DotNetVerbosity.Minimal,
+                VerifyNoChanges = true
+                });
+
+    }
+}
+
 [TaskName("Clean")]
-[IsDependentOn(typeof(FormatTask))]
+[IsDependentOn(typeof(FormatCheck))]
 public sealed class CleanTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.CleanDirectory($"../Template.*/bin/{context.MsBuildConfiguration}");
+        context.CleanDirectories($"../Template.*/bin/{context.MsBuildConfiguration}");
     }
 }
 
