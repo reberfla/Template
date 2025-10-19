@@ -53,7 +53,8 @@ public sealed class FormatCheck : FrostingTask<BuildContext>
                 {
                 Severity = DotNetFormatSeverity.Info,
                 Verbosity = DotNetVerbosity.Minimal,
-                VerifyNoChanges = true
+                VerifyNoChanges = true,
+                Exclude = ["**.csproj"]
                 });
 
     }
@@ -92,6 +93,7 @@ public sealed class TestTask : FrostingTask<BuildContext>
         {
             Configuration = context.MsBuildConfiguration,
             NoBuild = true,
+            Verbosity = DotNetVerbosity.Detailed
         });
     }
 }
