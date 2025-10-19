@@ -2,9 +2,8 @@ namespace Template.Utils.Logger;
 
 public class ConsoleLogger: IAuditLogger
 {
-    public string HandleMessage(string message)
+    public void HandleMessage(AuditEntry message)
     {
-        Console.WriteLine(message);
-        return message;
+        Console.WriteLine(message.ToString());
     }
 }

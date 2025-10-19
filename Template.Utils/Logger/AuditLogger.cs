@@ -3,13 +3,11 @@ namespace Template.Utils.Logger;
 public abstract class AuditLogger
 {
     protected AuditType _auditType;
-    public required IAuditLogger Logger;
+    private readonly IAuditLogger _logger = new ConsoleLogger();
 
-    protected string AuditLog(string description)
+    protected void AuditLog(string description)
     {
-        string dateTime = DateTime.UtcNow.ToString("yyyy-M-d");
-        string message = $"time: {dateTime} | category: {_auditType} | {description}";
-        Logger.HandleMessage(message);
-        return message;
+        AuditEntry message = new(_auditType, description);
+        _logger.HandleMessage(message);
     }
 }

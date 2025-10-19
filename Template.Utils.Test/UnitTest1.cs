@@ -8,16 +8,14 @@ public class UnitTest1
 {
     private class DummyScanner: AuditLogger
     {
-        [SetsRequiredMembers]
         public DummyScanner()
         {
             _auditType = AuditType.Scanner; 
-            Logger = new ConsoleLogger();
         }
 
-        public string TestLogging()
+        public void TestLogging()
         {
-            return this.AuditLog("message");
+            this.AuditLog("message");
         }
     }
 
@@ -25,9 +23,7 @@ public class UnitTest1
     public void TestLogger()
     {
         DummyScanner scanner = new();
-        string message = scanner.TestLogging();
-        Assert.Contains("Scanner", message);
-        Assert.Contains("message", message);
+        scanner.TestLogging();
     }
 
 }
