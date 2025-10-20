@@ -15,7 +15,7 @@ public class UnitTest1
 
         public void TestLogging()
         {
-            this.AuditLog("message");
+            WriteAuditLog("message");
         }
     }
 
