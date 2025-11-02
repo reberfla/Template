@@ -15,12 +15,12 @@ builder.Services.AddOpenApiDocument(configure =>
 });
 
 builder.Services.AddSingleton<IInfoService, MeinInfoService>();
-builder.Services.AddSingleton<IScannerHandlerService, ScannerHandlerService>();
 builder.Services.AddSingleton<IBarcodeScanner, SimBarcodeScanner>();
+builder.Services.AddSingleton<PurchaseService, PurchaseService>();
 
 var app = builder.Build();
 
-var scannerHandler = app.Services.GetRequiredService<IScannerHandlerService>();
+var scannerHandler = app.Services.GetRequiredService<PurchaseService>();
 var scanner = app.Services.GetRequiredService<IBarcodeScanner>();
 scanner.BarcodeScanned += (s, args) => scannerHandler.OnBarcodeScanned(args);
 
