@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Utils", "Template.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Utils.Test", "Template.Utils.Test\Template.Utils.Test.csproj", "{11C23B5A-A6C1-4FFF-8AA2-BA9914472EE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Application", "Template.Application\Template.Application.csproj", "{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,18 @@ Global
 		{11C23B5A-A6C1-4FFF-8AA2-BA9914472EE0}.Release|x64.Build.0 = Release|Any CPU
 		{11C23B5A-A6C1-4FFF-8AA2-BA9914472EE0}.Release|x86.ActiveCfg = Release|Any CPU
 		{11C23B5A-A6C1-4FFF-8AA2-BA9914472EE0}.Release|x86.Build.0 = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|x64.Build.0 = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Debug|x86.Build.0 = Debug|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|x64.ActiveCfg = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|x64.Build.0 = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|x86.ActiveCfg = Release|Any CPU
+		{FAF32D5C-4CA6-4A2F-BCE6-1FDE4F728789}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

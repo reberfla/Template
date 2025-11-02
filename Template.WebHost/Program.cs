@@ -1,4 +1,8 @@
-using Template.WebHost.Services;
+using Template.Application.Services;
+using Template.Domain.Scanner;
+
+using YamlDotNet.Core;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +15,14 @@ builder.Services.AddOpenApiDocument(configure =>
 });
 
 builder.Services.AddSingleton<IInfoService, MeinInfoService>();
+builder.Services.AddSingleton<IScannerHandlerService, ScannerHandlerService>();
+builder.Services.AddSingleton<IBarcodeScanner, SimBarcodeScanner>();
 
 var app = builder.Build();
+
+var scannerHandler = app.Services.GetRequiredService<IScannerHandlerService>();
+var scanner = app.Services.GetRequiredService<IBarcodeScanner>();
+scanner.BarcodeScanned += (s, args) => scannerHandler.OnBarcodeScanned(args);
 
 app.UseOpenApi();
 app.UseSwaggerUi();

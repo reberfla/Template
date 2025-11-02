@@ -1,4 +1,4 @@
-namespace Template.WebHost.Services;
+namespace Template.Application.Services;
 
 public class MeinInfoService : IInfoService
 {
