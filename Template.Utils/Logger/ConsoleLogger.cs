@@ -1,6 +1,6 @@
 namespace Template.Utils.Logger;
 
-public class ConsoleLogger: IAuditLogger
+public class ConsoleLogger : IAuditLogger
 {
     public void HandleMessage(AuditEntry message)
     {

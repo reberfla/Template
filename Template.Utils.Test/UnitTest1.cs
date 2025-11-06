@@ -6,11 +6,11 @@ using Template.Utils.Logger;
 
 public class UnitTest1
 {
-    private class DummyScanner: AuditLogger
+    private class DummyScanner : AuditLogger
     {
         public DummyScanner()
         {
-            _auditType = AuditType.Scanner; 
+            _auditType = AuditType.Scanner;
         }
 
         public void TestLogging()

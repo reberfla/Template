@@ -2,7 +2,7 @@ using Template.Domain.Scanner;
 
 namespace Template.Application.Services;
 
-public class SimBarcodeScanner: IBarcodeScanner
+public class SimBarcodeScanner : IBarcodeScanner
 {
     private const string DeviceId = "SimScanner";
 
@@ -14,7 +14,7 @@ public class SimBarcodeScanner: IBarcodeScanner
         BarcodeScanned?.Invoke(this, arg);
         Console.WriteLine($"dummy event raised: {arg}");
     }
-    
+
 }
 
 public interface IBarcodeScanner

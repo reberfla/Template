@@ -54,7 +54,6 @@ public sealed class FormatCheck : FrostingTask<BuildContext>
                 Severity = DotNetFormatSeverity.Info,
                 Verbosity = DotNetVerbosity.Minimal,
                 VerifyNoChanges = true,
-                Exclude = ["**.csproj"]
                 });
 
     }

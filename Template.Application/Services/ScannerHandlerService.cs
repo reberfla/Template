@@ -2,7 +2,7 @@ using Template.Domain.Scanner;
 
 namespace Template.Application.Services;
 
-public class ScannerHandlerService: IScannerHandlerService
+public class ScannerHandlerService : IScannerHandlerService
 {
     public void OnBarcodeScanned(BarcodeScannedEventArgs args)
     {
@@ -12,5 +12,5 @@ public class ScannerHandlerService: IScannerHandlerService
 
 public interface IScannerHandlerService
 {
-   public void OnBarcodeScanned(BarcodeScannedEventArgs args);
+    public void OnBarcodeScanned(BarcodeScannedEventArgs args);
 }

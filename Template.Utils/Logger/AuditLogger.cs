@@ -3,7 +3,7 @@ namespace Template.Utils.Logger;
 public abstract class AuditLogger
 {
     protected AuditType _auditType;
-    private readonly IAuditLogger _logger = new ConsoleLogger();
+    private readonly ConsoleLogger _logger = new();
 
     protected void WriteAuditLog(string description)
     {

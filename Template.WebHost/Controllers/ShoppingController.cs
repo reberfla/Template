@@ -26,5 +26,5 @@ public class ShoppingController([FromServices] PurchaseService purchaseService)
     {
         purchaseService.ResetCart();
     }
-    
+
 }

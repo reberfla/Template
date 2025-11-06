@@ -14,6 +14,6 @@ public record AuditEntry
 
     public override string ToString()
     {
-        return $"{_timestamp.ToString("yyyy-M-d hh:mm:ss")} | {_type} | {_description}";
+        return $"{_timestamp:yyyy-M-d hh:mm:ss} | {_type} | {_description}";
     }
 }

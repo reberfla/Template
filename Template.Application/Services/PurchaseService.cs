@@ -3,10 +3,10 @@ using Template.Domain.ShoppingCart;
 
 namespace Template.Application.Services;
 
-public class PurchaseService: IScannerHandlerService
+public class PurchaseService : IScannerHandlerService
 {
-    private ShoppingCart _shoppingCart = new ShoppingCart();
-    
+    private ShoppingCart _shoppingCart = new();
+
     public void OnBarcodeScanned(BarcodeScannedEventArgs args)
     {
         _shoppingCart.AddItem(args.Barcode);

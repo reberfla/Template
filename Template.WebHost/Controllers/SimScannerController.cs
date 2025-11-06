@@ -13,5 +13,5 @@ public class SimScannerController([FromServices] IBarcodeScanner barcodeScanner)
         barcodeScanner.RaiseDummyEvent("scanner event triggered from controller");
         return "scanned event raised";
     }
-    
+
 }
