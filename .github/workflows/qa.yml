@@ -1,0 +1,25 @@
+name: qa.yml
+on: push 
+
+jobs:
+  format-and-lint-check:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Run C# format checks
+        shell: bash
+        run: ./build.sh -t FormatCheck
+  
+  test:
+    needs: format-and-lint-check
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Run C# Unit Tests
+        shell: bash
+        run: ./build.sh -t Test
+        
