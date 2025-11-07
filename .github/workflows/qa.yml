@@ -13,7 +13,9 @@ jobs:
     steps:
       - name: Log Event Names
         shell: bash
-        run: echo "event: ${{github.event_name}} | event.action: ${{github.event.action}}"
+        run: echo |
+            ${{github.event_name}} |
+            ${{github.event.action}}
       - name: Checkout Repository
         uses: actions/checkout@v4
       
