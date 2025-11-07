@@ -60,7 +60,6 @@ public sealed class FormatCheck : FrostingTask<BuildContext>
 }
 
 [TaskName("Clean")]
-[IsDependentOn(typeof(FormatCheck))]
 public sealed class CleanTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)

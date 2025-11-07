@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-22.04
     continue-on-error: ${{github.event_name == 'push' && github.event.action != 'synchronize'}}
     steps:
+      - name: Log Event Names
+        shell: bash
+        run: echo "event: ${{github.event_name}} | event.action: ${{github.event.action}}"
       - name: Checkout Repository
         uses: actions/checkout@v4
       
