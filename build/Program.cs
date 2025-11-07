@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Cake.Core;
+using Cake.Core.IO;
 using Cake.Core.Diagnostics;
 using Cake.Frosting;
 using Cake.Common;
@@ -31,8 +32,8 @@ public class BuildContext : FrostingContext
     }
 }
 
-[TaskName("Format")]
-public sealed class FormatTask : FrostingTask<BuildContext>
+[TaskName("FormatServer")]
+public sealed class FormatServer : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
@@ -44,23 +45,87 @@ public sealed class FormatTask : FrostingTask<BuildContext>
     }
 }
 
-[TaskName("FormatCheck")]
-public sealed class FormatCheck : FrostingTask<BuildContext>
+[TaskName("FormatUI")]
+public sealed class FormatUI : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.DotNetFormat("../Template.sln", new DotNetFormatSettings
-                {
-                Severity = DotNetFormatSeverity.Info,
-                Verbosity = DotNetVerbosity.Minimal,
-                VerifyNoChanges = true,
-                });
+        var settings = new ProcessSettings
+        {
+            WorkingDirectory = "../Template.WebHost/Apps/UI",
+            Arguments = new ProcessArgumentBuilder()
+                .Append("run")
+                .Append("format")
+        };
+        context.StartProcess("npm", settings);
 
     }
 }
 
+[TaskName("Format")]
+[IsDependentOn(typeof(FormatServer))]
+[IsDependentOn(typeof(FormatUI))]
+public sealed class Format : FrostingTask<BuildContext>
+{
+}
+
+
+[TaskName("FormatCheckServer")]
+public sealed class FormatCheckServer : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        context.DotNetFormat("../Template.sln", new DotNetFormatSettings
+        {
+            Severity = DotNetFormatSeverity.Info,
+            Verbosity = DotNetVerbosity.Minimal,
+            VerifyNoChanges = true,
+        });
+
+    }
+}
+
+[TaskName("FormatCheckUI")]
+public sealed class FormatCheckUI : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        var settings = new ProcessSettings
+        {
+            WorkingDirectory = "../Template.WebHost/Apps/UI",
+            Arguments = new ProcessArgumentBuilder()
+                .Append("run")
+                .Append("format-check")
+        };
+        context.StartProcess("npm", settings);
+
+    }
+}
+[TaskName("LintCheckUI")]
+public sealed class LintCheckUI : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        var settings = new ProcessSettings
+        {
+            WorkingDirectory = "../Template.WebHost/Apps/UI",
+            Arguments = new ProcessArgumentBuilder()
+                .Append("run")
+                .Append("lint-check")
+        };
+        context.StartProcess("npm", settings);
+    }
+}
+
+[TaskName("FormatCheck")]
+[IsDependentOn(typeof(FormatCheckServer))]
+[IsDependentOn(typeof(FormatCheckUI))]
+[IsDependentOn(typeof(LintCheckUI))]
+public sealed class FormatCheck : FrostingTask<BuildContext>
+{
+}
+
 [TaskName("Clean")]
-[IsDependentOn(typeof(FormatCheck))]
 public sealed class CleanTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
@@ -95,10 +160,4 @@ public sealed class TestTask : FrostingTask<BuildContext>
             Verbosity = DotNetVerbosity.Detailed
         });
     }
-}
-
-[TaskName("Default")]
-[IsDependentOn(typeof(TestTask))]
-public class DefaultTask : FrostingTask
-{
 }

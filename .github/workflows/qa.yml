@@ -1,5 +1,5 @@
 name: qa.yml
-on: push 
+on: push
 
 jobs:
   format-and-lint-check:
