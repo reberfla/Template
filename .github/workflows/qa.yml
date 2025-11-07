@@ -1,21 +1,10 @@
 name: qa.yml
-on: 
-  push: {}
-  pull_request:
-    branches:
-      - main
-    
+on: push
 
 jobs:
   format-and-lint-check:
     runs-on: ubuntu-22.04
-    continue-on-error: ${{github.event_name == 'push' && github.event.action != 'synchronize'}}
     steps:
-      - name: Log Event Names
-        shell: bash
-        run: echo |
-            ${{github.event_name}} |
-            ${{github.event.action}}
       - name: Checkout Repository
         uses: actions/checkout@v4
       
