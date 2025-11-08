@@ -3,8 +3,8 @@ using Mumrich.SpaDevMiddleware.Domain.Models;
 
 namespace Template.WebHost;
 
-public class AppSettings: ISpaDevServerSettings
+public class AppSettings : ISpaDevServerSettings
 {
-    public Dictionary<string, SpaSettings> SinglePageApps { get; set; } = new();
+    public Dictionary<string, SpaSettings> SinglePageApps { get; set; } = [];
     public string SpaRootPath { get; set; } = Directory.GetCurrentDirectory();
 }
