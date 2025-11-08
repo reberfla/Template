@@ -8,10 +8,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Mumrich.SpaDevMiddleware" Version="1.4.1" />
         <PackageReference Include="NSwag.AspNetCore" Version="14.6.1"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Template.Application\Template.Application.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <SpaRoot Include="Apps/UI">
+            <InstallCommand>npm install</InstallCommand>
+            <BuildCommand>npm run build</BuildCommand>
+            <BuildOutputPath>Apps/UI/dist/**</BuildOutputPath>
+        </SpaRoot>
     </ItemGroup>
 
 </Project>

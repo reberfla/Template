@@ -57,7 +57,7 @@ export default defineConfig((/* ctx */) => {
       // ignorePublicFolder: true,
       // minify: false,
       // polyfillModulePreload: true,
-      // distDir
+      distDir: "./dist",
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
@@ -80,7 +80,10 @@ export default defineConfig((/* ctx */) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
     devServer: {
       // https: true,
-      open: true, // opens browser window automatically
+      open: false,
+      host: true,
+      port: 3000,
+      strictPort: true,
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework

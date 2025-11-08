@@ -6,9 +6,10 @@ using Cake.Frosting;
 using Cake.Common;
 using Cake.Common.IO;
 using Cake.Common.Tools.DotNet;
-using Cake.Common.Tools.DotNet.Build;
-using Cake.Common.Tools.DotNet.Test;
 using Cake.Common.Tools.DotNet.Format;
+using Cake.Common.Tools.DotNet.Test;
+using Cake.Common.Tools.DotNet.Build;
+using Cake.Common.Tools.DotNet.Publish;
 
 
 public static class Program
@@ -143,6 +144,19 @@ public sealed class BuildTask : FrostingTask<BuildContext>
         context.DotNetBuild("../Template.sln", new DotNetBuildSettings
         {
             Configuration = context.MsBuildConfiguration,
+        });
+    }
+}
+
+[TaskName("Publish")]
+[IsDependentOn(typeof(CleanTask))]
+public sealed class PublishTask : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        context.DotNetPublish("../Template.sln", new DotNetPublishSettings
+        {
+            Configuration = context.MsBuildConfiguration
         });
     }
 }

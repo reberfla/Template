@@ -1,5 +1,8 @@
+using Mumrich.SpaDevMiddleware.Extensions;
+
 using Template.Application.Services;
 using Template.Domain.Scanner;
+using Template.WebHost;
 
 using YamlDotNet.Core;
 
@@ -17,6 +20,9 @@ builder.Services.AddOpenApiDocument(configure =>
 builder.Services.AddSingleton<IInfoService, MeinInfoService>();
 builder.Services.AddSingleton<IBarcodeScanner, SimBarcodeScanner>();
 builder.Services.AddSingleton<PurchaseService, PurchaseService>();
+var appSettings = builder.Configuration.Get<AppSettings>();
+
+builder.SetupSpaDevMiddleware(appSettings);
 
 var app = builder.Build();
 
@@ -29,6 +35,5 @@ app.UseSwaggerUi();
 app.UseRouting();
 app.MapControllers();
 
-app.MapGet("/", () => "Hello World!");
-
+app.MapSinglePageApps(appSettings);
 app.Run();

@@ -8,7 +8,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      - name: Run C# format checks
+      - name: Run Format Checks
         shell: bash
         run: ./build.sh -t FormatCheck
   
@@ -19,7 +19,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         
-      - name: Run C# Unit Tests
+      - name: Run Unit Tests
         shell: bash
         run: ./build.sh -t Test
-        
+  
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Build Artifact
+        shell: bash
+        run: ./build.sh -t Publish
